@@ -24,7 +24,8 @@
       options = $.extend({
         iscroll: {
           mouseWheel: true,
-          preventDefault: false
+          preventDefault: true,
+          click: true
         },
         showOverlay: true
       }, options);
@@ -112,9 +113,9 @@
       var $this = $(this);
 
       if (touches) {
-        $this.on('touchmove.' + namespace, function disableTouch(event) {
+        document.addEventListener('touchmove.' + namespace, function disableTouch(event) {
           event.preventDefault();
-        });
+        }, { passive: false });
       }
 
       return $this
