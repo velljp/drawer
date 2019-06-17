@@ -10,6 +10,11 @@
     Base
 \*!------------------------------------*/
 
+.fixed {
+  overflow: auto;
+  height: 100%;
+}
+
 .drawer-open {
   overflow: hidden !important;
 }
