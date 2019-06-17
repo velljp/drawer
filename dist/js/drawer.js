@@ -51,6 +51,10 @@
         dropdown: 'drawer-dropdown'
       }, options.class);
 
+      $(document).on("click", ".drawer-toggle", function() {
+        $('html, body').toggleClass('fixed');
+      });
+
       return this.each(function instantiateDrawer() {
         var _this = this;
         var $this = $(this);
@@ -81,7 +85,6 @@
               return _this.iScroll.refresh();
             });
         }
-
       }); // end each
     },
 
@@ -155,7 +158,6 @@
           .remove();
       });
     }
-
   };
 
   $.fn.drawerCallback = function drawerCallback(callback) {
@@ -178,5 +180,4 @@
       $.error('Method ' + method + ' does not exist on jQuery.' + namespace);
     }
   };
-
 }));
